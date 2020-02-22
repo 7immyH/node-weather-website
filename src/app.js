@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath))
 // Routing
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Weather app',
+        title: 'New and improved weather app',
         name: 'Tim Hill'
     })
 })
