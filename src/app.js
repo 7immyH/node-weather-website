@@ -3,16 +3,16 @@ const express = require('express')
 const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
-const redis = require('redis')
-const process = require('process')
+// const redis = require('redis')
+// const process = require('process')
 
 const app = express()
 const port = process.env.PORT || 8081
-const client = redis.createClient({
-    host: 'redis-server',
-    port: 6379
-})
-client.set('visits', 0)
+// const client = redis.createClient({
+//     host: 'redis-server',
+//     port: 6379
+// })
+// client.set('visits', 0)
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -29,13 +29,13 @@ app.use(express.static(publicDirectoryPath))
 
 // Routing
 app.get('/', (req, res) => {
-    client.get('visits', (err, visits) => {
+    // client.get('visits', (err, visits) => {
         res.render('index', {
             title: 'This is your visits ' + visits,
             name: 'Tim Hill'
         })
-        client.set('visits', parseInt(visits) + 1)
-    })
+        // client.set('visits', parseInt(visits) + 1)
+    // })
 })
 
 app.get('/about', (req, res) => {
