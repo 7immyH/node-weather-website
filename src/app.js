@@ -28,6 +28,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 // Routing
+<<<<<<< HEAD
 app.get('/', (req, res) => {
     // client.get('visits', (err, visits) => {
         res.render('index', {
@@ -36,6 +37,13 @@ app.get('/', (req, res) => {
         })
         // client.set('visits', parseInt(visits) + 1)
     // })
+=======
+app.get('', (req, res) => {
+    res.render('index', {
+        title: 'Weather app',
+        name: 'Tim Hill'
+    })
+>>>>>>> parent of c7b7c23... title udpate
 })
 
 app.get('/about', (req, res) => {
